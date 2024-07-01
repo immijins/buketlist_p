@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.buketlist.mapper.BuketMapper">
+
+    <select id="getTime" resultType="string">
+        select now()
+    </select>
+
+    <insert id="insert">
+        insert into tbl_buket_list (title, dueDate) values (#{title}, #{dueDate})
+    </insert>
+
+    <select id="selectAll" resultType="com.example.buketlist.domain.BuketVO">
+        select * from tbl_buket_list order by tno desc
+    </select>
+
+    <select id="selectOne" resultType="com.example.buketlist.domain.BuketVO">
+        select * from tbl_buket_list where tno = #{tno}
+    </select>
+
+    <delete id="delete">
+        DELETE FROM tbl_buket_list WHERE tno = #{tno}
+    </delete>
+
+    <update id="update">
+        UPDATE tbl_buket_list SET title = #{title}, dueDate = #{dueDate}, finished = #{finished} WHERE tno = #{tno}
+    </update>
+
+    <select id="selectList" resultType="com.example.buketlist.domain.BuketVO">
+        select * from tbl_buket_list order by tno desc limit #{skip}, #{size}
+    </select>
+
+    <select id="getCount" resultType="int">
+        SELECT COUNT(*) FROM tbl_buket_list
+    </select>
+</mapper>
