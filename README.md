@@ -10,7 +10,7 @@ Spring을 활용한 게시판 CRUD로 제작한 버킷리스트 사이트입니�
 
 ## ⚙기술스택
 **Tool :** IntelliJ IDE
-**Framework/Library :** Spring, Bootstrap
+**Framework/Library :** Spring, Bootstrap, MyBatis
 **DataBase :** MariraDB
 
 ## 📊주요 기능
